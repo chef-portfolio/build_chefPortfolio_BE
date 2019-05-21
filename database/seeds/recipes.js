@@ -7,6 +7,7 @@ exports.seed = function(knex, Promise) {
         {
           title: "",
           mealType: "",
+          ingredients: "",
           instructions: ""
         }
       ]);

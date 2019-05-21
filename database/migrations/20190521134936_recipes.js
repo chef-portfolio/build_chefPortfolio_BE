@@ -4,6 +4,7 @@ exports.up = function(knex, Promise) {
 
     tbl.string("title", 255).notNullable();
     tbl.string("mealType", 255).notNullable();
+    tbl.string("ingredients", 30000000);
     tbl.string("instructions", 30000000);
   });
 };

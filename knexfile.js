@@ -6,7 +6,9 @@ module.exports = {
     useNullAsDefault: true, // used to avoid warning on console
     migrations: {
       directory: "./database/migrations",
-      tableName: "recipes"
+      tableName: "users",
+      tableName: "recipes",
+      tableName: "ingredients"
     },
     seeds: { directory: "./database/seeds" }
   }

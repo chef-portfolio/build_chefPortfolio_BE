@@ -15,4 +15,6 @@ server.use(express.json());
 configureRoutes(server);
 server.use("/users", userRouter);
 server.use("/api/recipes", recipesRouter);
+// server.post("/api/register", register);
+// server.post("/api/login", login);
 module.exports = server;

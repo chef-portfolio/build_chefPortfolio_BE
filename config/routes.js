@@ -8,7 +8,7 @@ const { authenticate } = require("../auth/authenticate");
 module.exports = server => {
   server.post("/api/register", register);
   server.post("/api/login", login);
-  server.get("/api/recipes", authenticate, getRecipes);
+  server.get("/api/recipes", getRecipes);
 };
 
 function register(req, res) {
@@ -69,9 +69,9 @@ function getRecipes(req, res) {
   };
 
   axios
-    .get("https://www.allrecipes.com/recipes/", requestOptions)
+    .get("./database/recipes.db3", requestOptions)
     .then(response => {
-      res.status(200).json(response.data.results);
+      res.status(200).json(response);
     })
     .catch(err => {
       res.status(500).json({ message: "Error Fetching Recipes", error: err });

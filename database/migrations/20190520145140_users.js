@@ -7,6 +7,9 @@ exports.up = function(knex) {
       .notNullable()
       .unique();
     users.string("password", 255).notNullable();
+    users.string("location", 255);
+    users.string("contact", 255);
+    users.string("img_url", 255);
   });
 };
 

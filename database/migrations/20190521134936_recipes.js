@@ -6,6 +6,8 @@ exports.up = function(knex, Promise) {
     tbl.string("mealType", 255).notNullable();
     tbl.string("ingredients", 30000000);
     tbl.string("instructions", 30000000);
+    tbl.string("img_url", 255);
+    tbl.integer("chef_id");
   });
 };
 

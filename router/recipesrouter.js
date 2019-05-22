@@ -2,7 +2,7 @@ const router = require("express").Router();
 
 const knex = require("knex");
 
-const db = require("dbConfig.js");
+const db = require("../database/dbConfig");
 
 //const db = knex(knexConfig);
 

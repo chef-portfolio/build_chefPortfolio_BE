@@ -2,23 +2,24 @@ const router = require("express").Router();
 
 const knex = require("knex");
 
-const knexConfig = {
-  client: "sqlite3",
-  useNullAsDefault: true,
-  connection: {
-    filename: "./database/recipes.db3"
-  }
-};
+const db = require("dbConfig.js");
 
-const db = knex(knexConfig);
+//const db = knex(knexConfig);
 
 router
   .route("/")
   .get(async (req, res) => {
     try {
       const recipes = await db("recipes");
-      const ingredients = await db("ingredients");
-      res.status(200).json({ recipes, ingredients });
+
+      for (let i = 0; i < recipes.length; i++) {
+        let ingredient_list = await db("ingredients").where({
+          "ingredients.recipe_id": recipes[i].id
+        });
+        recipes[i] = { ...recipes[i], ingredient_list };
+      }
+
+      res.status(200).json(recipes);
     } catch (error) {
       res.status(500).json({
         message: "There was an error retrieving the recipes",
@@ -46,12 +47,19 @@ router
   .route("/:id")
   .get(async (req, res) => {
     const { id } = req.params;
-    const recipe = await db("recipes").where({ id: id });
+
     try {
+      const recipe = await db("recipes").where({ id: id });
+
       if (!recipe) {
         res.status(404).json({ message: "recipe not found" });
       }
-      res.status(200).json(recipe[0]);
+
+      let ingredient_list = await db("ingredients").where({
+        "ingredients.recipe_id": recipe[0].id
+      });
+
+      res.status(200).json({ ...recipe[0], ingredient_list });
     } catch (error) {
       res.status(500).json(error);
     }

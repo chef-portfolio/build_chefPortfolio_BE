@@ -9,6 +9,22 @@ exports.seed = function(knex, Promise) {
         {
           ingredient: `${faker.commerce.productMaterial()}`,
           recipe_id: 1
+        },
+        {
+          ingredient: `${faker.commerce.productMaterial()}`,
+          recipe_id: 2
+        },
+        {
+          ingredient: `${faker.commerce.productMaterial()}`,
+          recipe_id: 3
+        },
+        {
+          ingredient: `${faker.commerce.productMaterial()}`,
+          recipe_id: 4
+        },
+        {
+          ingredient: `${faker.commerce.productMaterial()}`,
+          recipe_id: 5
         }
       ]);
     });

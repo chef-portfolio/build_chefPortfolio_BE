@@ -12,6 +12,20 @@ exports.seed = function(knex, Promise) {
           location: `${faker.address.state()}`,
           contact: `${faker.phone.phoneNumber()}`,
           img_url: `${faker.image.avatar()}`
+        },
+        {
+          username: `${faker.internet.userName()}`,
+          password: `${faker.internet.password()}`,
+          location: `${faker.address.state()}`,
+          contact: `${faker.phone.phoneNumber()}`,
+          img_url: `${faker.image.avatar()}`
+        },
+        {
+          username: `${faker.internet.userName()}`,
+          password: `${faker.internet.password()}`,
+          location: `${faker.address.state()}`,
+          contact: `${faker.phone.phoneNumber()}`,
+          img_url: `${faker.image.avatar()}`
         }
       ]);
     });

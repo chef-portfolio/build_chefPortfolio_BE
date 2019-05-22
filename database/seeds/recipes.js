@@ -12,6 +12,34 @@ exports.seed = function(knex, Promise) {
           ingredients: `${faker.commerce.productMaterial()}`,
           instructions: `${faker.lorem.paragraph()}`,
           chef_id: 1
+        },
+        {
+          title: `${faker.commerce.productName()}`,
+          mealType: `${faker.commerce.product()}`,
+          ingredients: `${faker.commerce.productMaterial()}`,
+          instructions: `${faker.lorem.paragraph()}`,
+          chef_id: 2
+        },
+        {
+          title: `${faker.commerce.productName()}`,
+          mealType: `${faker.commerce.product()}`,
+          ingredients: `${faker.commerce.productMaterial()}`,
+          instructions: `${faker.lorem.paragraph()}`,
+          chef_id: 3
+        },
+        {
+          title: `${faker.commerce.productName()}`,
+          mealType: `${faker.commerce.product()}`,
+          ingredients: `${faker.commerce.productMaterial()}`,
+          instructions: `${faker.lorem.paragraph()}`,
+          chef_id: 4
+        },
+        {
+          title: `${faker.commerce.productName()}`,
+          mealType: `${faker.commerce.product()}`,
+          ingredients: `${faker.commerce.productMaterial()}`,
+          instructions: `${faker.lorem.paragraph()}`,
+          chef_id: 5
         }
       ]);
     });

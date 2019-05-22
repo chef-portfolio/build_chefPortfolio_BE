@@ -17,7 +17,8 @@ router
   .get(async (req, res) => {
     try {
       const recipes = await db("recipes");
-      res.status(200).json(recipes);
+      const ingredients = await db("ingredients");
+      res.status(200).json({ recipes, ingredients });
     } catch (error) {
       res.status(500).json({
         message: "There was an error retrieving the recipes",

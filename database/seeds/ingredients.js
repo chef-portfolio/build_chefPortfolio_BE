@@ -1,3 +1,5 @@
+const faker = require("faker");
+
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries and resets ids
   return knex("ingredients")
@@ -5,7 +7,7 @@ exports.seed = function(knex, Promise) {
     .then(function() {
       return knex("ingredients").insert([
         {
-          ingredient: "",
+          ingredient: `${faker.commerce.productMaterial()}`,
           recipe_id: 1
         }
       ]);

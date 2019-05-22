@@ -12,7 +12,6 @@ const knexConfig = {
 
 const db = knex(knexConfig);
 
-// endpoints here
 router
   .route("/")
   .get(async (req, res) => {

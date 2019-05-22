@@ -8,7 +8,8 @@ exports.seed = function(knex, Promise) {
           title: "",
           mealType: "",
           ingredients: "",
-          instructions: ""
+          instructions: "",
+          chef_id: 1
         }
       ]);
     });

@@ -5,7 +5,8 @@ exports.seed = function(knex, Promise) {
     .then(function() {
       return knex("ingredients").insert([
         {
-          ingredients: ""
+          ingredient: "",
+          recipe_id: 1
         }
       ]);
     });

@@ -53,7 +53,7 @@ function generateToken(users) {
   const options = {
     expiresIn: "1d"
   };
-  return jwt.sign(payload, secrets.jwtSecrets, options);
+  return jwt.sign(payload, secrets.jwtSecret, options);
 }
 
 module.exports = router;

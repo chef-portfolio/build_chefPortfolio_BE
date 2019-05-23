@@ -15,7 +15,7 @@ router.post("/register", (req, res) => {
       res.status(201).json(saved);
     })
     .catch(err => {
-      res.status(500).json(err);
+      res.status(500).json({ message: "Auth line 18" });
     });
 });
 
@@ -40,7 +40,7 @@ router.post("/login", (req, res) => {
       }
     })
     .catch(err => {
-      res.status(500).json(err);
+      res.status(500).json({ message: "Auth line 43" });
     });
 });
 

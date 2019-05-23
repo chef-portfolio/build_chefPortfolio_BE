@@ -14,8 +14,8 @@ router.get("/", restricted, checkRole("users"), (req, res) => {
 
 router.get("/:id", restricted, checkRole("users"), (req, res) => {
   Users.findById(req.params.id)
-    .then(user => {
-      res.json(user);
+    .then(users => {
+      res.json(users);
     })
     .catch(err => res.send(err));
 });

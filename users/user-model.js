@@ -20,16 +20,17 @@ async function add(user) {
 
   return findById(id);
 }
+
+function findById(id) {
+  return db("users")
+    .select("id", "username")
+    .where({ id })
+    .first();
+}
 try {
 } catch (error) {
   res.status(500).json({
     message: "Error adding id",
     error: error
   });
-  function findById(id) {
-    return db("users")
-      .select("id", "username")
-      .where({ id })
-      .first();
-  }
 }

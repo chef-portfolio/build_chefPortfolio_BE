@@ -15,7 +15,7 @@ router.post("/register", (req, res) => {
       res.status(201).json(saved);
     })
     .catch(err => {
-      res.status(500).json({ message: "Auth line 18" });
+      res.status(500).json(err);
     });
 });
 
@@ -53,7 +53,7 @@ function generateToken(users) {
   const options = {
     expiresIn: "1d"
   };
-  return jwt.sign(payload, secrets.jwtKey, options);
+  return jwt.sign(payload, secrets.jwtSecrets, options);
 }
 
 module.exports = router;

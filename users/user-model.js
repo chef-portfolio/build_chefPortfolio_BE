@@ -15,9 +15,8 @@ function findBy(filter) {
   return db("users").where(filter);
 }
 
-async function add(user) {
-  const { id } = await db("users").insert(user);
-
+async function add(users) {
+  const { id } = await db("users").insert(users);
   return findById(id);
 }
 
@@ -27,10 +26,10 @@ function findById(id) {
     .where({ id })
     .first();
 }
-try {
-} catch (error) {
-  res.status(500).json({
-    message: "Error adding id",
-    error: error
-  });
-}
+
+// try {
+// } catch (error) {
+//   res.status(500).json({
+//     message: "Error adding id",
+//     error: error
+//   });

@@ -15,7 +15,7 @@ router.get("/", restricted, checkRole("users"), (req, res) => {
 router.get("/:id", restricted, checkRole("users"), (req, res) => {
   Users.findById(req.params.id)
     .then(users => {
-      res.json(users);
+      res.json(users, location, contact, img_url);
     })
     .catch(err => res.send(err));
 });

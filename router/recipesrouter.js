@@ -66,14 +66,14 @@ router
   })
   .put(async (req, res) => {
     const { id } = req.params;
-    const { name } = req.body;
+//     const { name } = req.body;
     try {
-      if (!name) {
-        res.status(400).json({ message: "No name in body" });
-      }
+//       if (!name) {
+//         res.status(400).json({ message: "No name in body" });
+//       }
       const count = await db("recipes")
         .where({ id: id })
-        .update({ name });
+        .update(req.body);
       if (count > 0) {
         res.status(200).json({ message: "recipe was updated successfully" });
       } else {

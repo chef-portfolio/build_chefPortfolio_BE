@@ -2,15 +2,7 @@ const router = require("express").Router();
 
 const knex = require("knex");
 
-const knexConfig = {
-  client: "sqlite3",
-  useNullAsDefault: true,
-  connection: {
-    filename: "./database/recipes.db3"
-  }
-};
-
-const db = knex(knexConfig);
+const db = require("../database/dbConfig");
 
 router
   .route("/")
